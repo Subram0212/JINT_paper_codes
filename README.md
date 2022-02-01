@@ -15,3 +15,9 @@ This program performs the UAV optimization which is a Vehicle Routing Problem wi
 
 ### UAS_gurobi_formulation_k2.py
 This program solves for the UAV optimization formulated by Mixed Integer Linear Programming (MILP) Formulation. This is a Vehicle Routing Problem formulated by MILP formulation and solved using Gurobi solver. This is an exact solution solved by Branch-and-Bound algorithm.
+
+### 3veh_2clusters_3clustdist_plots
+This file contains the output results of the simulation performed. It represents the optimal routes of UAV and UGV for a set of mission points.
+
+### 3veh_2clusters_3clustdist_datapts
+This folder contains the input mission points for which the multi-tiered UAV-UGV optimization is needed to be carried out. The PDF file represents the mission points on a graph, whereas the spreadsheet file contains the actual input mission points that are to be fed to the program to optimize.
