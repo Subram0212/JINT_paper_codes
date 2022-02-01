@@ -1,5 +1,6 @@
 """Main points and formulation
 This is the inner-loop UAV optimization. This program is carried on to optimize a fleet of aerial vehicles, where the number of vehicles is 3.
+This program performs the optimization using the Vehicle Routing Problem formulation with time-window, recharging and optional node constraints.
 The UGV velocity is not a constant one, but it varies within the range of certain values (Here it is 1.5m/s-4.5m/s)
 The fuel consumption is linearly proportional to the distance of the UAV traveled. That is, it is the negative of the
 distance traveled.
