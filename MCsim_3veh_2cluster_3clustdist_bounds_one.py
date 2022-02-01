@@ -34,7 +34,7 @@ for m in range(10):
             interpolate_y = interp_y[0] + (((interp_y[1] - interp_y[0])*j)/4)
             interpolated_UGV_stops.append((interpolate_x, interpolate_y))
 
-    def create_data_model():
+    def create_data_model():   # creating a dictionary containing input UAV and UGV parameters
         data = {}
         fuel_capacity = 30000   # fuel_capacity in -ft
         # locs, mission_locations = Monte_carlo_K_means_3_clusters.random_locations()
@@ -222,6 +222,7 @@ for m in range(10):
         ax = fig.add_subplot(111)
         ax.set_aspect('equal', adjustable='box')
 
+        # plotting the output routes
         for i in range(len(data["locations"])):
             if i <= 8:
                 ax.plot(data["locations"][i][0], data["locations"][i][1], 'k.', markersize=10)
