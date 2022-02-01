@@ -4,4 +4,4 @@ This project has the code for the simulation results produced in the JINT paper 
 
 The three-tiered optimization code is as follows:
 
-# Kmeans_clustering_2cluster_3clustdist_bounds_one.py: Using unsupervised Machine Learning (ML) algorithm to cluster the mission points on the area into 2 clusters. Each cluster has its own cluster centroid.
+### Kmeans_clustering_2cluster_3clustdist_bounds_one.py: Using unsupervised Machine Learning (ML) algorithm to cluster the mission points on the area into 2 clusters. Each cluster has its own cluster centroid.
