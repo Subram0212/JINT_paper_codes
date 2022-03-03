@@ -205,27 +205,6 @@ if m.status == GRB.OPTIMAL:
         print("Route fuel: {}".format(UAV_fuel))
     print("\nTotal distance for all routes: {}".format(m.objVal))
 
-
-# '''optimize'''
-# if m.status == GRB.INFEASIBLE:
-#     var = m.getVars()
-#     lbpen = [1.0]*m.numVars
-#     ubpen = [10.0]*m.numVars
-#     constr = []
-#     for i in range(n):
-#         for j in range(9):
-#             if j == 0 or j == 8:
-#                 continue
-#             # if f[i] >= Q//2:
-#             #     x1 = 1
-#             # m.addGenConstrIndicator(x1, True, x[(i, j)] == 0)
-#             constr.append(m.addConstr((f[i] >= Q//2) >> x[(i, j)] == 0))
-#             # m.computeIIS()
-#     rhspen = [1.0]*len(constr)
-#     m.feasRelax(0, False, var, lbpen, ubpen, constr, rhspen)
-#     m.optimize()
-
-
 '''retrieve the solution'''
 
 
