@@ -89,7 +89,6 @@ for i in range(n):
     for j in range(0, n):
         if j <= 8:
             m.addConstr(f[j] == Q)
-            # m.addConstr(f[j] <= Q - (dist_matrix[i, j] * (x[i, j])) + M*(1-x[(i, j)]))
         else:
             m.addConstr(f[j] <= Q)
             m.addConstr(f[j] >= 0)
@@ -99,8 +98,6 @@ m.update()
 '''constraint_6: time-windows and also eliminating sub-tours'''
 for i in range(n):
     for j in range(n):
-        # m.addConstr(t[i] >= (et[i]))  # service should start after the earliest service start time
-        # m.addConstr(t[i] <= (lt[i]))  # service can't be started after the latest service start time
         m.addConstr(t[j] >= (et[j]))  # service should start after the earliest service start time
         m.addConstr(t[j] <= (lt[j]))  # service can't be started after the latest service start time
         m.addConstr(t[j] >= t[i] + (st[i] + ((dist_matrix[i, j]/vehicle_speed)) * x[(i, j)]) - M*(1-x[(i, j)]))
@@ -117,13 +114,7 @@ m.update()
 # x1 = 0
 for i in range(9, n):
     for j in range(9):
-        # if f[i] >= Q//2:
-        #     x1 = 1
-        # m.addGenConstrIndicator(x1, True, x[(i, j)] == 0)
-        # m.addConstr((x[(i, j)] == 0) >> (f[i] >= Q//4))
-        m.addConstr((x[(i, j)] == 1) >> (f[i] >= dist_matrix[(i, j)]))
-        # m.addConstr((x[(i, j)] == 1) >> (quicksum(x[(i, j)] for i in range(9, n)) == 1))
-        # m.computeIIS()
+        m.addConstr((x[(i, j)] == 1) >> (f[i] >= dist_matrix[(i, j)])
 m.update()
 
 '''constraint 9: Refueling constraints'''
