@@ -129,14 +129,7 @@ m.update()
 '''constraint 9: Refueling constraints'''
 for i in range(9):
     for j in range(9, n):
-        # if f[i] >= Q//2:
-        #     x1 = 1
-        # m.addGenConstrIndicator(x1, True, x[(i, j)] == 0)
-        # m.addConstr((x[(i, j)] == 1) >> (f[i] >= Q//4))
         m.addConstr((x[(i, j)] == 1) >> (f[i] == Q))
-        # m.addConstr((x[(i, j)] == 1) >> (quicksum(x[(i, j)] for i in range(9)) == 1))
-        # m.addConstr(quicksum(x[(i, j)] for i in range(9)) == 1)
-        # m.computeIIS()
 m.update()
 
 for j in range(n):
