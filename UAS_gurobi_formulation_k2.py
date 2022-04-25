@@ -130,11 +130,6 @@ m.update()
 for i in range(9, n):
     for j in range(8):
         m.addConstr((x[(i, j)] == 1) >> (quicksum(x[(j, i)] for i in range(9, n)) == 1))
-# for i in range(n):
-#     m.addConstr((x[(i, 0)]) == 0)
-
-# for i in range(n):
-#     m.addConstr(quicksum(x[(i, j)] for j in range(1, 8)) <= 1)
 
 m.write("myLP.lp")
 
