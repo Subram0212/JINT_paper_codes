@@ -114,7 +114,7 @@ m.update()
 # x1 = 0
 for i in range(9, n):
     for j in range(9):
-        m.addConstr((x[(i, j)] == 1) >> (f[i] >= dist_matrix[(i, j)])
+        m.addConstr((x[(i, j)] == 1) >> (f[i] >= dist_matrix[(i, j)]))
 m.update()
 
 '''constraint 9: Refueling constraints'''
