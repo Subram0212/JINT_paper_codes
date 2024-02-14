@@ -21,3 +21,14 @@ This file contains the output results of the simulation performed. It represents
 
 ### 3veh_2clusters_3clustdist_datapts
 This folder contains the input mission points for which the multi-tiered UAV-UGV optimization is needed to be carried out. The PDF file represents the mission points on a graph, whereas the spreadsheet file contains the actual input mission points that are to be fed to the program to optimize.
+
+### requirements.txt
+This file contains the necessary Python packages and its versions to be installed to run this repository.
+
+# Steps to run the code
+
+1. Run the code 'MCsim_3veh_2cluster_3clustdist_bounds_one.py' to perform UAV-UGV routing with Constraint Programming solver (OR-Tools).
+    * The other Python functions such as K-Means_clustering, random_mission_points_generation, UGV_routing are nested into this code.
+    * This code will generate the excel file of the data points, the plots of the optimal route obtained from simulation.
+    * Excel files generated are: 3veh_2clusters_3clustdist_1bd_2.xlsx; Additional data for gurobi.xlsx
+2. Use the generated excel files data into 'UAS_gurobi_formulation_k2.py' to perform UAV-UGV routing with MILP solver (Gurobi).
